@@ -67,7 +67,7 @@ function Home({ handleAddToCart }) {
           <option value="All">All Categories</option>
           <option value="Pizza">Pizza</option>
           <option value="Burger">Burger</option>
-          <option value="Dosa">Dosa</option>
+          <option value="Meal">Meal</option>
           <option value="Drinks">Drinks</option>
         </select>
         <select value={priceRange} onChange={(e) => setPriceRange(e.target.value)}>
