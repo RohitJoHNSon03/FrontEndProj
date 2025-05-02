@@ -5,6 +5,7 @@ import './Home.css';
 
 function Home({ handleAddToCart }) {
   const [foods, setFoods] = useState([]);
+  const [favorites, setFavorites] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [priceRange, setPriceRange] = useState("All");
@@ -27,8 +28,16 @@ function Home({ handleAddToCart }) {
     fetchFoods();
   }, []);
 
+  const toggleFavorite = (id) => {
+    setFavorites((prevFavorites) =>
+      prevFavorites.includes(id)
+        ? prevFavorites.filter(favId => favId !== id)
+        : [...prevFavorites, id]
+    );
+  };
+
   const filteredFoods = foods.filter((food) => {
-    const name = food.name ? food.name.toLowerCase() : "";  // Use an empty string if food.name is undefined
+    const name = food.name ? food.name.toLowerCase() : "";
     const matchesName = name.includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === "All" || food.category === selectedCategory;
     const matchesPrice =
@@ -41,8 +50,8 @@ function Home({ handleAddToCart }) {
   });
 
   const handleAddToCartWithAlert = (food) => {
-    handleAddToCart(food);  // Add the food to the cart
-    alert(`${food.name} has been added to your cart!`);  // Display an alert
+    handleAddToCart(food);
+    alert(`${food.name} has been added to your cart!`);
   };
 
   return (
@@ -67,7 +76,7 @@ function Home({ handleAddToCart }) {
           <option value="All">All Categories</option>
           <option value="Pizza">Pizza</option>
           <option value="Burger">Burger</option>
-          <option value="Dosa">Dosa</option>
+          <option value="Meal">Meal</option>
           <option value="Drinks">Drinks</option>
         </select>
         <select value={priceRange} onChange={(e) => setPriceRange(e.target.value)}>
@@ -85,9 +94,19 @@ function Home({ handleAddToCart }) {
         ) : (
           filteredFoods.map((food) => (
             <div key={food.id} className="food-card">
+              {/* Heart Icon */}
+              <span
+                className="favorite-icon"
+                onClick={() => toggleFavorite(food.id)}
+                title="Add to Favorites"
+              >
+                {favorites.includes(food.id) ? "❤️" : "🤍"}
+              </span>
+
               <img src={food.image} alt={food.name} className="food-image" />
               <h3 className="food-name">{food.name}</h3>
               <p className="food-price">₹{food.price}</p>
+              <p className="food-rating">⭐ {food.rating || 4.5}</p>
               <button className="add-button" onClick={() => handleAddToCartWithAlert(food)}>
                 Add to Cart
               </button>

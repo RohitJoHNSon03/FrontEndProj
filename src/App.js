@@ -19,17 +19,37 @@ function App() {
   const handleRemoveFromCart = (foodId) => {
     setCart((prevCart) => prevCart.filter(item => item.id !== foodId));
   };
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0); 
+
+  // Total price for payment page
+  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home handleAddToCart={handleAddToCart} />} />
-        <Route path="/cart" element={<Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart} />} />
-        <Route path="/checkout" element={<Checkout cart={cart} />} />
+        <Route
+          path="/"
+          element={<Home handleAddToCart={handleAddToCart} />}
+        />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              setCart={setCart}
+              handleRemoveFromCart={handleRemoveFromCart}
+            />
+          }
+        />
+        <Route
+          path="/checkout"
+          element={<Checkout cart={cart} />}
+        />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/payment" element={<PaymentPage totalPrice={totalPrice} />} />
+        <Route
+          path="/payment"
+          element={<PaymentPage totalPrice={totalPrice} />}
+        />
       </Routes>
     </Router>
   );

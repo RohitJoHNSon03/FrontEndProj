@@ -1,0 +1,95 @@
+/* Admin Container */
+.admin-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+  
+  /* Heading */
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Order Card */
+  .order-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-card p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .order-card ul {
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .order-card li {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Approve Button */
+  .approve-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .approve-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Clear Orders Button */
+  .clear-button {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+  }
+  
+  .clear-button:hover {
+    background-color: #e03e3e;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .admin-container {
+      padding: 10px;
+      max-width: 90%;
+    }
+  
+    .order-card {
+      padding: 10px;
+    }
+  
+    .approve-button, .clear-button {
+      width: 100%;
+    }
+  }
+  
