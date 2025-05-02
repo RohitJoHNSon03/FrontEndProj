@@ -1,0 +1,76 @@
+/* Payment Page Styles */
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .payment-card {
+    background-color: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .payment-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .payment-amount {
+    font-size: 1.5rem;
+    color: #ff5722;
+    margin-bottom: 30px;
+  }
+  
+  .payment-status {
+    margin-top: 20px;
+  }
+  
+  .payment-status.success {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .payment-button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .payment-button:hover {
+    background-color: #e64a19;
+  }
+  
+  @media (max-width: 768px) {
+    .payment-card {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    .payment-title {
+      font-size: 1.5rem;
+    }
+  
+    .payment-amount {
+      font-size: 1.3rem;
+    }
+  
+    .payment-button {
+      font-size: 1rem;
+    }
+  }
+  

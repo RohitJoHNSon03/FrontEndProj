@@ -1,0 +1,49 @@
+/* Navbar.css */
+
+/* Basic styling for the navigation bar */
+nav {
+    background-color: #d32f2f; /* Red color */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center; /* Centers the links horizontally */
+    align-items: center; /* Vertically centers the links */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+    border-radius: 8px;
+    margin-top: 10px; /* Adjust the margin-top to remove extra space */
+    margin-bottom: 20px; /* Optional: Add bottom margin if needed */
+  }
+  
+  /* Styling for the links */
+  nav a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Slightly larger font size */
+    font-weight: 500; /* Bold the font for a clean look */
+    margin: 0 20px; /* Space between links without the | separator */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect for the links */
+  nav a:hover {
+    color: #ffeb3b; /* Bright yellow color on hover */
+    transform: scale(1.1); /* Slightly enlarge the link */
+  }
+  
+  /* Active link styling (when the user is on that page) */
+  nav a.active {
+    color: #ffeb3b; /* Highlight active link with bright yellow */
+    font-weight: bold; /* Make it bold */
+  }
+  
+  /* Responsive Design: Mobile-friendly navbar */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column; /* Stack links vertically on smaller screens */
+      align-items: flex-start;
+    }
+  
+    nav a {
+      margin: 10px 0; /* Add spacing between links in vertical mode */
+    }
+  }
+  
