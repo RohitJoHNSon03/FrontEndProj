@@ -24,7 +24,7 @@ function App() {
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   return (
-    <Router>
+    <Router basename="/FrontEndProj">
       <Navbar />
       <Routes>
         <Route
